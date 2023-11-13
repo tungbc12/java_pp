@@ -19,20 +19,12 @@ public class App {
 
 class FileUtils {
     public void appendToFile(String filePath, String data) {
-        try {
-            // Create a FileWriter with append mode.
-            FileWriter file = new FileWriter(filePath, true);
-
-            // Create a BufferedWriter.
-            BufferedWriter output = new BufferedWriter(file);
+        try (FileWriter file = new FileWriter(filePath, true);
+             BufferedWriter output = new BufferedWriter(file)){
 
             // Write to file.
             output.write(data);
             output.newLine();
-
-            // Closes the writer
-            output.close();
-            file.close();
         }
 
         catch (Exception e) {
