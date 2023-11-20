@@ -3,3 +3,4 @@ Test data for appendToFile method.
 Test data for appendToFile method.
 Test data for appendToFile method.
 Test data for appendToFile method.
+Test data for appendToFile method.

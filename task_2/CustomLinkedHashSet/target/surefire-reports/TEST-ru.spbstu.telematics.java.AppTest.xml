@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="ru.spbstu.telematics.java.AppTest" time="0.003" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="ru.spbstu.telematics.java.AppTest" time="0.002" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="17.0.8.1+1-Ubuntu-0ubuntu122.04"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-17-openjdk-amd64/lib"/>
-    <property name="maven.multiModuleProjectDirectory" value="/home/user/java_pp/task_1/file-appender"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/user/java_pp/task_2/CustomLinkedHashSet"/>
     <property name="java.vm.vendor" value="Private Build"/>
     <property name="java.vendor.url" value="Unknown"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -13,7 +13,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/user/java_pp/task_1/file-appender"/>
+    <property name="user.dir" value="/home/user/java_pp/task_2/CustomLinkedHashSet"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
     <property name="java.runtime.version" value="17.0.8.1+1-Ubuntu-0ubuntu122.04"/>
     <property name="os.arch" value="amd64"/>
@@ -57,5 +57,12 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.stdout.encoding" value="UTF-8"/>
   </properties>
-  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testAppendToFile" time="0.003"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testAdd" time="0.001"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testSize" time="0"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testRetainAll" time="0"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testContainsAll" time="0"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testContains" time="0"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testAddAll" time="0"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testRemove" time="0"/>
+  <testcase classname="ru.spbstu.telematics.java.AppTest" name="testRemoveAll" time="0.001"/>
 </testsuite>
