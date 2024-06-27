@@ -86,8 +86,19 @@ public class HTTPServer {
         handlers.put(method + path, handler);
     }
 
+    public void stop() {
+        try {
+            if (serverSocketChannel != null && serverSocketChannel.isOpen()) {
+                serverSocketChannel.close();
+                System.out.println("Server stopped");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void main(String[] args) throws IOException {
-        HTTPServer server = new HTTPServer("localhost", 8080);
+        HTTPServer server = new HTTPServer("localhost",8080);
         server.addHandler("GET", "/", new GETHandler());
         server.addHandler("POST", "/post", new POSTHandler());
         server.addHandler("PUT", "/put", new PUTHandler());

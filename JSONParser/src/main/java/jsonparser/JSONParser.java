@@ -5,7 +5,6 @@ import java.lang.reflect.*;
 
 public class JSONParser {
 
-    // Parse JSON string to Map<String, Object>
     public static Map<String, Object> parse(String json) throws Exception {
         if (json == null || json.isEmpty()) {
             return new HashMap<>();
@@ -33,7 +32,6 @@ public class JSONParser {
 
     private static List<Object> parseArray(JSONTokenizer tokenizer) throws Exception {
         List<Object> list = new ArrayList<>();
-        //tokenizer.nextToken(); // Skip '['
         while (tokenizer.hasNext()) {
             list.add(parseValue(tokenizer));
             String token = tokenizer.nextToken();
@@ -73,10 +71,35 @@ public class JSONParser {
         }
     }
 
-    // Convert JSON string to a specified class
     public static <T> T fromJson(String json, Class<T> clazz) throws Exception {
-        Map<String, Object> map = parse(json);
-        return fromMap(map, clazz);
+        if (json == null || json.isEmpty()) {
+            return fromMap(new HashMap<>(),clazz);
+        }
+
+        JSONTokenizer tokenizer = new JSONTokenizer(json);
+
+        if (clazz.isArray()) {
+            Object array = parseValue(tokenizer);
+            if (array instanceof List) {
+                return (T) convertListToArray((List<Object>) array, clazz.getComponentType());
+            } else {
+                throw new IllegalArgumentException("Expected a JSON array");
+            }
+        } else if (List.class.isAssignableFrom(clazz)) {
+            Object list = parseValue(tokenizer);
+            return clazz.cast(list);
+        } else {
+            Map<String, Object> map = parseObject(tokenizer);
+            return fromMap(map, clazz);
+        }
+    }
+
+    private static <T> T convertListToArray(List<Object> list, Class<T> componentType) {
+        Object array = Array.newInstance(componentType, list.size());
+        for (int i = 0; i < list.size(); i++) {
+            Array.set(array, i, list.get(i));
+        }
+        return (T) array;
     }
 
     private static <T> T fromMap(Map<String, Object> map, Class<T> clazz) throws Exception {
