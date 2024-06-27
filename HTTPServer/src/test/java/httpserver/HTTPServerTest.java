@@ -21,7 +21,7 @@ public class HTTPServerTest {
     @BeforeAll
     public static void setUp() throws IOException {
         // Initialize server on localhost port 8081 for testing purposes
-        server = new HTTPServer("localhost", 8080);
+        server = new HTTPServer("localhost", 8081);
 
         // Add handlers for HTTP protocol methods.
         server.addHandler("GET", "/", new GETHandler());
@@ -104,7 +104,7 @@ public class HTTPServerTest {
     }
 
     private String sendHTTPRequest(String request) throws IOException {
-        try (SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("localhost", 8080))) {
+        try (SocketChannel socketChannel = SocketChannel.open(new InetSocketAddress("localhost", 8081))) {
             ByteBuffer buffer = ByteBuffer.wrap(request.getBytes());
             socketChannel.write(buffer);
 
