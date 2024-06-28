@@ -12,6 +12,18 @@ public class HTTPResponse {
         headers = new HashMap<>();
     }
 
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
+
     public void setStatusCode(int statusCode) {
         this.statusCode = statusCode;
     }

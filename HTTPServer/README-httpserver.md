@@ -35,21 +35,19 @@
     HTTP Methods Supported:
 
 - GETHandler: Handles GET requests.
-  - POSTHandler: Handles POST requests, including processing of request bodies.
-  - PUTHandler: Handles PUT requests.
-  - PATCHHandler: Handles PATCH requests.
-  - DELETEHandler: Handles DELETE requests.
+- POSTHandler: Handles POST requests, including processing of request bodies.
+- PUTHandler: Handles PUT requests.
+- PATCHHandler: Handles PATCH requests.
+- DELETEHandler: Handles DELETE requests.
 ************
 
 **Test description**\
 *The HTTPServerTest class is a JUnit test suite designed to verify the functionality of the HTTPServer and its handlers using unit tests. Here's a concise description of what the test suite does:*
-- testGETRequest(): Sends a GET request to / and verifies the response.
-- testPOSTRequest(): Sends a POST request to /post with a request body and verifies the response.
-- testPUTRequest(): Sends a PUT request to /put with a request body and verifies the response.
-- testPATCHRequest(): Sends a PATCH request to /patch with a request body and verifies the response.
-- testDELETERequest(): Sends a DELETE request to /delete and verifies the response.
-- testInvalidRequest(): Sends an invalid request and verifies the response for a 400 Bad Request.
-- testNotFoundRequest(): Sends a request to a non-existent path (/notfound) and verifies the response for 404 Not Found.
-- testEmptyRequest(): Sends an empty request and verifies the response for 400 Bad Request.
+- HTTPServerTest: This file tests the functionality of the HTTPServer class. It includes setup and teardown methods to start and stop the server. It tests the server's ability to handle a simple GET request, ensuring the server responds with the correct status code (200 OK).
+- HTTPResponseTest: This file tests the HTTPResponse class. It includes tests for setting the status code, setting the body of the response, and adding headers. The tests verify that the response is correctly formatted as a string.
+- HTTPRequestTest: This file tests the HTTPRequest class. It includes tests for parsing a raw HTTP request string. The tests check that the method, path, and headers are correctly extracted from the raw request.
+- HTTPHandlersTest: This file tests the HTTP handlers (GETHandler, POSTHandler, PUTHandler, PATCHHandler, DELETEHandler). Each handler is tested with a corresponding HTTP request to ensure they handle requests correctly and produce the expected responses (status code, body, and headers).
 
 **Maven test result**
+
+![img.png](img.png)

@@ -1,7 +1,5 @@
 package httpserver;
 
-import httpserver.method.*;
-
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -95,15 +93,5 @@ public class HTTPServer {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    public static void main(String[] args) throws IOException {
-        HTTPServer server = new HTTPServer("localhost",8080);
-        server.addHandler("GET", "/", new GETHandler());
-        server.addHandler("POST", "/post", new POSTHandler());
-        server.addHandler("PUT", "/put", new PUTHandler());
-        server.addHandler("PATCH", "/patch", new PATCHHandler());
-        server.addHandler("DELETE", "/delete", new DELETEHandler());
-        server.start();
     }
 }
