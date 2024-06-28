@@ -42,6 +42,7 @@
 ************
 
 **Test description**\
+\
 *The HTTPServerTest class is a JUnit test suite designed to verify the functionality of the HTTPServer and its handlers using unit tests. Here's a concise description of what the test suite does:*
 - HTTPServerTest: This file tests the functionality of the HTTPServer class. It includes setup and teardown methods to start and stop the server. It tests the server's ability to handle a simple GET request, ensuring the server responds with the correct status code (200 OK).
 - HTTPResponseTest: This file tests the HTTPResponse class. It includes tests for setting the status code, setting the body of the response, and adding headers. The tests verify that the response is correctly formatted as a string.
